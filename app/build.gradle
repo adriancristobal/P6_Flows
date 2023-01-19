@@ -59,9 +59,10 @@ dependencies {
     implementation "androidx.fragment:fragment-ktx:1.5.5"
 
     //Room para nuestra base de datos
-    implementation "androidx.room:room-runtime:2.4.3"
-    kapt "androidx.room:room-compiler:2.4.3"
-    implementation "androidx.room:room-ktx:2.4.3"
+    def room_version = '2.4.3'
+    implementation "androidx.room:room-runtime:$room_version"
+    kapt "androidx.room:room-compiler:$room_version"
+    implementation "androidx.room:room-ktx:$room_version"
 
     //dagger hilt
     implementation 'com.google.dagger:hilt-android:2.42'
@@ -73,4 +74,13 @@ dependencies {
     implementation 'com.airbnb.android:lottie:5.2.0'
     //Material Design
     implementation 'com.google.android.material:material:1.7.0'
+
+    //Retrofit
+    def retrofitVersion = "2.9.0"
+
+    //Retrofit
+    implementation "com.squareup.retrofit2:retrofit:$retrofitVersion"
+    implementation "com.squareup.retrofit2:converter-gson:$retrofitVersion"
+    implementation "com.squareup.retrofit2:converter-scalars:$retrofitVersion"
+    implementation "com.squareup.okhttp3:logging-interceptor:4.9.1"
 }
