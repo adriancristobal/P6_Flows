@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/menu_item_main"
+        android:enabled="true"
+        android:icon="@drawable/ic_flag"
+        android:title="@string/mainFragmentMenuNavigationButton"/>
+    <item
+        android:id="@+id/menu_item_most_seen_movies"
+        android:enabled="true"
+        android:icon="@drawable/ic_players"
+        android:title="@string/moviesMostSeenFragmentMenuNavigationButton"/>
+    <item
+        android:id="@+id/menu_item_lupa"
+        android:enabled="true"
+        android:icon="@drawable/search_lupa"
+        android:title="@string/lupaFragmentMenuNavigationButton"/>
+</menu>

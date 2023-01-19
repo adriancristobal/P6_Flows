@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">P6_Flows</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="mainFragmentMenuNavigationButton">Main</string>
+    <string name="moviesMostSeenFragmentMenuNavigationButton">Most seen movies</string>
+    <string name="lupaFragmentMenuNavigationButton">Search</string>
+</resources>
