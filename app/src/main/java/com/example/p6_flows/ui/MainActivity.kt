@@ -21,7 +21,7 @@ class MainActivity : AppCompatActivity() {
 
     private lateinit var navController: NavController
 
-
+    private lateinit var appBarConfiguration: AppBarConfiguration
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -36,30 +36,28 @@ class MainActivity : AppCompatActivity() {
 
     private fun configBottomNavigationView() {
         with(binding) {
-            val navView: BottomNavigationView = binding.navView
-
-            navController = findNavController(navHostFragmentActivityMain.id)
-            // Passing each menu ID as a set of Ids because each
-            // menu should be considered as top level destinations.
-            val appBarConfiguration = AppBarConfiguration(
+            val navHostFragment =
+                supportFragmentManager.findFragmentById(R.id.nav_host_fragment_activity_main) as NavHostFragment
+            navController = navHostFragment.navController
+            appBarConfiguration = AppBarConfiguration(
                 setOf(
-                    R.id.menu_item_main, R.id.menu_item_most_seen_movies, R.id.menu_item_lupa
+                    R.id.menu_item_main,
+                    R.id.menu_item_most_seen_movies,
+                    R.id.menu_item_lupa
                 )
             )
-            setupActionBarWithNavController(navController, appBarConfiguration)
-            navView.setupWithNavController(navController)
-
+           // setupActionBarWithNavController(navController, appBarConfiguration)
+           // navView.setupWithNavController(navController)
 
             navView.setBackgroundColor(getColor(R.color.teal_200))
             navView.setOnItemSelectedListener {
                 when (it.itemId) {
                     R.id.menu_item_main -> {
-                        val badgeDrawable = binding.navView.getOrCreateBadge(it.itemId)
-                        badgeDrawable.isVisible = true
-                        badgeDrawable.clearNumber()
+                        navController.navigate(R.id.mainFragment)
                         true
                     }
                     R.id.menu_item_most_seen_movies -> {
+                        navController.navigate(R.id.moviesMostSeenFragment)
                         true
                     }
                     R.id.menu_item_lupa -> {
