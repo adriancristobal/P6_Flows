@@ -7,14 +7,26 @@
     tools:context=".ui.fragment.MainFragment">
 
 
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvFilmList"
+        android:layout_width="match_parent"
+        android:layout_height="600dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/tvEjemplo"/>
+
     <TextView
+        android:id="@+id/tvEjemplo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/material_motion_easing_decelerated"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/rvFilmList" />
+
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

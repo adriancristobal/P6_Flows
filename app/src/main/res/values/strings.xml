@@ -5,4 +5,9 @@
     <string name="mainFragmentMenuNavigationButton">Main</string>
     <string name="moviesMostSeenFragmentMenuNavigationButton">Most seen movies</string>
     <string name="lupaFragmentMenuNavigationButton">Search</string>
+    <string name="img_espana">Espanita</string>
+    <string name="btn_show_more">Show More</string>
+    <string name="title_film">Strangers</string>
+    <string name="subtitle_nationality">Nationality</string>
+
 </resources>
