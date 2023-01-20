@@ -1,10 +1,10 @@
 package com.example.flows.data.remote
 
-import com.example.flows.data.modelo.MovieDesc
-import com.example.flows.data.modelo.TrendingMovieResponse
-import com.example.flows.data.modelo.toMovie
-import com.example.flows.domain.modelo.Movie
-import com.example.flows.utils.NetworkResult
+
+import com.example.p6_flows.data.modelEntity.MovieDescResponse
+import com.example.p6_flows.data.modelEntity.toMovie
+import com.example.p6_flows.domain.model.Movie
+import com.example.p6_flows.utils.NetworkResult
 import io.buildwithnd.demotmdb.network.services.MovieService
 import javax.inject.Inject
 
@@ -14,15 +14,23 @@ import javax.inject.Inject
 class MovieRemoteDataSource @Inject constructor(private val movieService: MovieService) :
     BaseApiResponse() {
 
-    suspend fun fetchTrendingMovies(): NetworkResult<List<Movie>> {
+    suspend fun fetchNowPlayingMovies(): NetworkResult<List<Movie>> {
 
-        return safeApiCall(apiCall = {movieService.getPopularMovies()},
-            transform = { trendingMovieResponse -> trendingMovieResponse
+        return safeApiCall(apiCall = {movieService.getNowPlayingMovies()},
+            transform = { nowPlayingMovie -> nowPlayingMovie
                 .results?.map { movieEntity ->  movieEntity.toMovie()} ?: emptyList()})
 
     }
 
-    suspend fun fetchMovie(id: Int): NetworkResult<MovieDesc> {
+    suspend fun fetchPopularMovies(): NetworkResult<List<Movie>> {
+
+        return safeApiCall(apiCall = {movieService.getPopularMovies()},
+            transform = { popularMovieResponse -> popularMovieResponse
+                .results?.map { movieEntity ->  movieEntity.toMovie()} ?: emptyList()})
+
+    }
+
+    suspend fun fetchMovie(id: Int): NetworkResult<MovieDescResponse> {
 
         return safeApiCall(apiCall = {movieService.getMovie(id)})
 

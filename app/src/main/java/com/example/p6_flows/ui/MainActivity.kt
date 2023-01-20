@@ -1,19 +1,12 @@
 package com.example.p6_flows.ui
 
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.navigation.NavController
-import androidx.navigation.findNavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.AppBarConfiguration
-import androidx.navigation.ui.setupActionBarWithNavController
-import androidx.navigation.ui.setupWithNavController
 import com.example.p6_flows.R
 import com.example.p6_flows.databinding.ActivityMainBinding
-import com.example.p6_flows.ui.fragment.MainFragment
-import com.example.p6_flows.ui.fragment.MoviesMostSeenFragment
-import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class MainActivity : AppCompatActivity() {
 

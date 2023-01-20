@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/mainFragment"
-        android:name="com.example.p6_flows.ui.fragment.MainFragment"
+        android:name="com.example.p6_flows.ui.fragment.main.MainFragment"
         android:label="fragment_main"
         tools:layout="@layout/fragment_main" >
         <action
@@ -19,7 +19,7 @@
     </fragment>
     <fragment
         android:id="@+id/moviesMostSeenFragment"
-        android:name="com.example.p6_flows.ui.fragment.MoviesMostSeenFragment"
+        android:name="com.example.p6_flows.ui.fragment.mostSeenMovies.MoviesMostSeenFragment"
         android:label="fragment_movies_most_seen"
         tools:layout="@layout/fragment_movies_most_seen" >
         <action

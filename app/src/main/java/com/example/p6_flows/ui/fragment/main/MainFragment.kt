@@ -1,4 +1,4 @@
-package com.example.p6_flows.ui.fragment
+package com.example.p6_flows.ui.fragment.main
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -8,8 +8,7 @@ import android.view.ViewGroup
 import com.example.p6_flows.R
 
 
-class MoviesMostSeenFragment : Fragment() {
-
+class MainFragment : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -21,7 +20,15 @@ class MoviesMostSeenFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_movies_most_seen, container, false)
+        return inflater.inflate(R.layout.fragment_main, container, false)
     }
+
+
+
+    
+
+
+
+
 
 }
