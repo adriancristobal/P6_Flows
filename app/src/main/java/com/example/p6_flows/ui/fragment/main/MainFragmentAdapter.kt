@@ -31,6 +31,10 @@ class MainFragmentAdapter : ListAdapter<Movie, MainFragmentAdapter.ItemViewholde
 
 
         fun bind(m: Movie) = with(binding) {
+
+            titleMovie.text = m.title
+            overviewMovie.text = m.overview
+
             val arrow = binding.buttonExpand
             val hiddenView = binding.hiddenView
             arrow.setOnClickListener(View.OnClickListener {
@@ -42,6 +46,11 @@ class MainFragmentAdapter : ListAdapter<Movie, MainFragmentAdapter.ItemViewholde
                     buttonExpand.text = "Show more"
                 }
             })
+
+            titleMovie.text = m.title
+            overviewMovie.text = m.overview
+
+
         }
     }
 

@@ -30,12 +30,14 @@
 
                 <!-- Title, secondary and supporting text -->
                 <TextView
+                    android:id="@+id/title_movie"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/title_film"
                     android:textAppearance="?attr/textAppearanceHeadline6"
                     />
                 <TextView
+                    android:id="@+id/overview_movie"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
