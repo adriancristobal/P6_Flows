@@ -36,10 +36,10 @@ class MainFragmentAdapter : ListAdapter<Movie, MainFragmentAdapter.ItemViewholde
             arrow.setOnClickListener(View.OnClickListener {
                 if (hiddenView.visibility == View.GONE) {
                     hiddenView.visibility = View.VISIBLE
-                    buttonExpand.text = "Show more"
+                    buttonExpand.text = "Show less"
                 } else {
                     hiddenView.visibility = View.GONE
-                    buttonExpand.text = "Show less"
+                    buttonExpand.text = "Show more"
                 }
             })
         }

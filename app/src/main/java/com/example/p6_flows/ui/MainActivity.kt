@@ -4,10 +4,13 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
+import androidx.navigation.fragment.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import com.example.p6_flows.R
 import com.example.p6_flows.databinding.ActivityMainBinding
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
@@ -30,7 +33,7 @@ class MainActivity : AppCompatActivity() {
     private fun configBottomNavigationView() {
         with(binding) {
             val navHostFragment =
-                supportFragmentManager.findFragmentById(R.id.nav_host_fragment_activity_main) as NavHostFragment
+                supportFragmentManager.findFragmentById(R.id.fragmentContainerView) as NavHostFragment
             navController = navHostFragment.navController
             appBarConfiguration = AppBarConfiguration(
                 setOf(
@@ -39,11 +42,12 @@ class MainActivity : AppCompatActivity() {
                     R.id.menu_item_lupa
                 )
             )
+            navController = navHostFragment.findNavController()
            // setupActionBarWithNavController(navController, appBarConfiguration)
            // navView.setupWithNavController(navController)
 
-            navView.setBackgroundColor(getColor(R.color.teal_200))
-            navView.setOnItemSelectedListener {
+            bottomNavigation.setBackgroundColor(getColor(R.color.teal_200))
+            bottomNavigation.setOnItemSelectedListener {
                 when (it.itemId) {
                     R.id.menu_item_main -> {
                         navController.navigate(R.id.mainFragment)

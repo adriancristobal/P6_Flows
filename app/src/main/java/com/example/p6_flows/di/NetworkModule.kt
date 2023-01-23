@@ -1,13 +1,12 @@
 package com.example.flows.di
 
+import com.example.p6_flows.BuildConfig
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
-import com.example.flows.network.AuthInterceptor
+import com.example.p6_flows.network.AuthInterceptor
 import com.example.p6_flows.Config
-import com.example.p6_flows.di.BuildConfig
-import com.example.p6_flows.network.ConstantsNetwork
 import io.buildwithnd.demotmdb.network.services.MovieService
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor

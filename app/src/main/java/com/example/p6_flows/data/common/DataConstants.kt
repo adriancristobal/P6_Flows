@@ -1,4 +1,4 @@
-package com.example.p5_aplicationfutbolfinal.data.common
+package com.example.p6_flows.data.common
 
 
 object DataConstants {

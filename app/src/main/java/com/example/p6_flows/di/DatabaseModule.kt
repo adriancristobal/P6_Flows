@@ -2,7 +2,7 @@ package com.example.flows.di
 
 import android.content.Context
 import androidx.room.Room
-import com.example.p5_aplicationfutbolfinal.data.common.DataConstants
+import com.example.p6_flows.data.common.DataConstants
 import com.example.p6_flows.data.dao.MovieDao
 import dagger.Module
 import dagger.Provides
