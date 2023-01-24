@@ -75,6 +75,29 @@ class MainFragmentViewModel @Inject constructor(
                         isLoading = false
                     )
                 }
+                movieRepository.fetchNowPlayingMovies()
+                    .catch(action = { cause -> _uiError.send(cause.message ?: "") })
+                    .collect { result ->
+                        when (result) {
+                            is NetworkResult.Error -> {
+                                _uiState.update {
+                                    it.copy(
+                                        error = result.message,
+                                        isLoading = false
+                                    )
+                                }
+                                //_uiError.send(result.message ?: "Error")
+                            }
+                            is NetworkResult.Loading -> _uiState.update { it.copy(isLoading = true) }
+                            is NetworkResult.Success -> _uiState.update {
+                                it.copy(
+                                    movies = result.data ?: emptyList(), isLoading = false
+                                )
+                            }
+
+                        }
+                    }
+
             }
             //                  if (!Utils.hasInternetConnection(appContext))
             //                      _uiError.send("no hay internet"+ BuildConfig.API_KEY)

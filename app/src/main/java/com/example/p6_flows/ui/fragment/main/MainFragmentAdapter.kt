@@ -41,7 +41,7 @@ class MainFragmentAdapter : ListAdapter<Movie, MainFragmentAdapter.ItemViewholde
             overviewMovie.text = m.overview
 
             Glide.with(itemView.context)
-                .load("http://image.tmdb.org/t/p/w342"+m.poster_path)
+                .load("http://image.tmdb.org/t/p/w780"+m.poster_path)
                 .into(imageMovie)
 
 

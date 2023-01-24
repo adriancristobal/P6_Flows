@@ -79,11 +79,12 @@ class MainFragment : Fragment() {
 //                        }
                     binding.loading.visibility = if (state.isLoading) View.VISIBLE else View.GONE
                     movieAdapter.submitList(state.movies)
-                    state.error.let {
-                        //Toast.makeText(context, it, Toast.LENGTH_SHORT).show()
-                        viewModel.handleEvent(MainContract.Event.ShowMessage)
+                    state.error.let { error ->
+                        if (error != null) {
+                            Toast.makeText(context, error, Toast.LENGTH_SHORT).show()
+                            viewModel.handleEvent(MainContract.Event.ShowMessage)
+                        }
                     }
-//                    }
                 }
             }
         }

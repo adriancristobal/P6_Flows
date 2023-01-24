@@ -14,8 +14,8 @@
             <!-- Media -->
             <ImageView
                 android:id="@+id/imageMovie"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:layout_height="600dp"
                 app:srcCompat="@drawable/img_espana"
                 android:scaleType="centerCrop"
                 android:contentDescription="@string/img_espana"
@@ -64,7 +64,17 @@
                     android:text="@string/btn_show_more"
                     style="?attr/borderlessButtonStyle"
                     />
+                <CheckBox
+                    android:id="@+id/icon_favourite"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:button="@drawable/sl_favourite"
+                    app:buttonTint="@android:color/holo_red_dark"
+                    android:layout_marginStart="200dp"
+                    />
+
             </LinearLayout>
+
 
         </LinearLayout>
 
