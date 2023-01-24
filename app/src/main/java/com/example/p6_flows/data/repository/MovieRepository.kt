@@ -37,7 +37,7 @@ class MovieRepository @Inject constructor(
 
     private fun fetchNowPlayingMoviesCached(): NetworkResult<List<Movie>> =
         movieDao.getAll().let { list ->
-            NetworkResult.Success(list.map { it.toMovie() } ?: emptyList())
+            NetworkResult.Success(list.map { it.toMovie() })
         }
 
     fun fetchMovie(id: Int): Flow<NetworkResult<MovieDescResponse>> {

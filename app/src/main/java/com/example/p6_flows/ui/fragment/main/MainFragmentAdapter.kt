@@ -44,6 +44,7 @@ class MainFragmentAdapter : ListAdapter<Movie, MainFragmentAdapter.ItemViewholde
 
 
 
+
             val arrow = binding.buttonExpand
             val hiddenView = binding.hiddenView
             arrow.setOnClickListener(View.OnClickListener {
