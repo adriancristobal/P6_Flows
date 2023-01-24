@@ -13,9 +13,10 @@ data class MovieEntity (
     val title: String?,
     val overview: String? = "",
     val popularity: Double = 0.0,
+    val poster_path: String? = "",
 
     )
 
-fun MovieEntity.toMovie() : Movie = Movie(this.id, this.title ?: "No title", this.overview ?: "No overview", this.popularity)
+fun MovieEntity.toMovie() : Movie = Movie(this.id, this.title ?: "No title", this.overview ?: "No overview", this.popularity, this.poster_path ?: "No poster")
 
-fun Movie.toMovieEntity(): MovieEntity = MovieEntity(this.id, this.title, this.overview, this.popularity)
+fun Movie.toMovieEntity(): MovieEntity = MovieEntity(this.id, this.title, this.overview, this.popularity, this.poster_path)

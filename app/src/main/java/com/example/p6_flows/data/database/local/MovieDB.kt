@@ -6,7 +6,7 @@ import com.example.p6_flows.data.dao.MovieDao
 import com.example.p6_flows.data.modelEntity.MovieEntity
 
 @Database(entities = [MovieEntity::class],
-    version = 1,
+    version = 2,
     exportSchema = false,
 )
 //@TypeConverters(GenreConverters::class)

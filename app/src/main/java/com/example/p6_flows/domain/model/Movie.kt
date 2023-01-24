@@ -10,6 +10,7 @@ data class Movie(
     val title: String?,
     val overview: String?,
     val popularity: Double,
+    var poster_path: String?,
 
 
 ) : Parcelable

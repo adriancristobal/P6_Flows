@@ -1,15 +1,18 @@
 package com.example.p6_flows.ui.fragment.main
 
+import android.graphics.BitmapFactory
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.example.p6_flows.R
 import com.example.p6_flows.databinding.CardViewMovieListBinding
 import com.example.p6_flows.domain.model.Movie
+import java.net.URL
+
 
 class MainFragmentAdapter : ListAdapter<Movie, MainFragmentAdapter.ItemViewholder>(DiffCallback()) {
 
@@ -34,6 +37,12 @@ class MainFragmentAdapter : ListAdapter<Movie, MainFragmentAdapter.ItemViewholde
 
             titleMovie.text = m.title
             overviewMovie.text = m.overview
+
+            Glide.with(itemView.context)
+                .load("http://image.tmdb.org/t/p/w500"+m.poster_path)
+                .into(imageMovie)
+
+
 
             val arrow = binding.buttonExpand
             val hiddenView = binding.hiddenView
