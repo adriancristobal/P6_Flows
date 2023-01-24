@@ -7,7 +7,9 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
+import coil.load
 import com.bumptech.glide.Glide
+import com.bumptech.glide.request.RequestOptions
 import com.example.p6_flows.R
 import com.example.p6_flows.databinding.CardViewMovieListBinding
 import com.example.p6_flows.domain.model.Movie
@@ -39,8 +41,23 @@ class MainFragmentAdapter : ListAdapter<Movie, MainFragmentAdapter.ItemViewholde
             overviewMovie.text = m.overview
 
             Glide.with(itemView.context)
-                .load("http://image.tmdb.org/t/p/w500"+m.poster_path)
+                .load("http://image.tmdb.org/t/p/w342"+m.poster_path)
                 .into(imageMovie)
+
+
+/*
+            coil.ImageLoader(itemView.context).load("http://image.tmdb.org/t/p/w342"+m.poster_path) {
+                crossfade(true)
+                placeholder(R.drawable.ic_launcher_foreground)
+                error(R.drawable.ic_launcher_foreground)
+            }
+
+            imageMovie.load("http://image.tmdb.org/t/p/w342"+m.poster_path) {
+                crossfade(true)
+                crossfade(1000)
+            }
+
+ */
 
 
 
@@ -56,9 +73,6 @@ class MainFragmentAdapter : ListAdapter<Movie, MainFragmentAdapter.ItemViewholde
                     buttonExpand.text = "Show more"
                 }
             })
-
-            titleMovie.text = m.title
-            overviewMovie.text = m.overview
 
 
         }
